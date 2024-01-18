@@ -24,3 +24,14 @@ when we declare variable with var it don't lie inside a particular scopre and be
 
 
 console.table([accountId, accountEmail, accountPassword, accountCity, accountState])
+
+
+//┌─────────┬─────────────┐
+//│ (index) │   Values    │
+//├─────────┼─────────────┤
+//│    0    │   144553    │
+//│    1    │ 'hc@hc.com' │
+//│    2    │ '21212121'  │
+//│    3    │ 'Bengaluru' │
+//│    4    │  undefined  │
+//└─────────┴─────────────┘
