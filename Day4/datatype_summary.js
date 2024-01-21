@@ -69,3 +69,34 @@ console.log(typeof anotherId);
 // In contrast, a statically typed language requires variable types to be explicitly declared, and the type of a variable is determined at compile-time. Errors related to type mismatches are typically caught during the compilation process in statically typed languages, providing a level of safety at the cost of some flexibility.
 
 /****************************************************************************************************************** */
+
+
+//------------------------------------------------ MEMORY STORAGE ------------------------------------------------
+
+// all the primitive data types are stored inside STACK(string, number) and all the non primitive data types(array, objects, ..) are stored in heaps.
+// whenever we call something that is present inside stack, we get a copy of it and whenever we call something that is present inside heap we get a reference to it
+
+// for primitive data type:
+let myName = "Ayush Sharma";
+
+let nickName = myName;
+
+nickName = "Karan Sharma";
+
+console.log(myName); // Ayush Sharma
+console.log(nickName); // Karan Sharma
+
+
+// for non primitive data type:
+let userOne = {
+    email: "ayush@gmail.com",
+    id: 12345
+}
+
+let userTwo = userOne;
+
+userTwo.email = "karan@gmail.com";
+
+console.log(userOne.email); // karan@gmail.com
+
+console.log(userTwo.email); // karan@gmail.com
