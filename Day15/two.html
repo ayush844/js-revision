@@ -17,23 +17,74 @@
   </body>
   <script>
     const parent = document.querySelector(".parent");
-    // console.log(parent);
-    // console.log(parent.children);
-    // console.log(parent.children[1].innerHTML);
 
-    // for (let i = 0; i < parent.children.length; i++) {
-    //      console.log(parent.children[i].innerHTML);
+    console.log(parent);
+    // <div class="parent">
+    //   <!-- this is a comment -->
+    //   <div class="day">Monday</div>
+    //   <div class="day" style="color: orange;">Tuesday</div>
+    //   <div class="day">Wednesday</div>
+    //   <div class="day">Thursday</div>
+    // </div>
 
+    console.log(parent.children);
+    // HTMLCollection(4) [div.day, div.day, div.day, div.day] // it returns a HTML collection
+    // {
+    // "0": {div.day},
+    // "1": {div.day},
+    // "2": {div.day},
+    // "3": {div.day}
     // }
+
+    console.log(parent.children[1].innerHTML);
+    // Tuesday
+
+    for (let i = 0; i < parent.children.length; i++) {
+      console.log(parent.children[i].innerHTML);
+    }
+    //Monday
+    //Tuesday
+    //Wednesday
+    //Thursday
+
     parent.children[1].style.color = "orange";
-    // console.log(parent.firstElementChild);
-    // console.log(parent.lastElementChild);
+
+    console.log(parent.firstElementChild);
+    // <div class="day">Monday</div>
+    console.log(parent.lastElementChild);
+    // <div class="day">Thursday</div>
 
     const dayOne = document.querySelector(".day");
-    // console.log(dayOne);
-    // console.log(dayOne.parentElement);
-    // console.log(dayOne.nextElementSibling);
+    console.log(dayOne);
+    // <div class="day">Monday</div>s
 
-    console.log("NODES: ", parent.childNodes);
+    console.log(dayOne.parentElement);
+    //<div class="parent">
+    //  <!-- this is a comment -->
+    //  <div class="day">Monday</div>
+    //  <div class="day" style="color: orange;">Tuesday</div>
+    //  <div class="day">Wednesday</div>
+    //  <div class="day">Thursday</div>
+    //</div>
+
+    console.log(dayOne.nextElementSibling);
+    // <div class="day" style="color: orange;">Tuesday</div>
+
+    console.log("NODES: ", parent.childNodes); //it returns a node list of complex tree structures
+    // NodeList(11) [text, comment, text, div.day, text, div.day, text, div.day, text, div.day, text]
+    //here text is "ENTER"( <_| )
+    //{
+    //"0": {},
+    //"1": {},
+    //"2": {},
+    //"3": {},
+    //"4": {},
+    //"5": {},
+    //"6": {},
+    //"7": {},
+    //"8": {},
+    //"9": {},
+    //"10": {}
+    //}
   </script>
 </html>

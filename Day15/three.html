@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai aur code</title>
+  </head>
+  <body style="background-color: #212121; color: #fff"></body>
+  <script>
+    const div = document.createElement("div");
+    console.log(div);
+    // <div></div>
+
+    div.className = "main";
+
+    div.id = Math.round(Math.random() * 10 + 1);
+
+    div.setAttribute("title", "generated title");
+
+    div.style.backgroundColor = "green";
+
+    div.style.padding = "12px";
+
+    div.innerText = "Chai aur code";
+
+    //.innerText always overwrite the value so it is more preferred to use something else to add text:
+    const addText = document.createTextNode("Chai aur Ayush");
+    div.appendChild(addText);
+
+    //<div class="main" id="11" title="generated title" style="background-color: green; padding: 12px;">
+    //    Chai aur codeChai aur Ayush
+    //</div>
+
+    document.body.appendChild(div);
+  </script>
+</html>
