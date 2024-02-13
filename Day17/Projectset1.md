@@ -45,3 +45,35 @@ buttons.forEach((btn) => {
   });
 });
 ```
+
+## project 2:
+
+```javascript
+const form = document.querySelector("form");
+
+console.log(form);
+// HTMLFormElement{attributes: {…}, innerHTML: "\n <p><label>Height in CM: </label><input type=\"text\" id=\"height\"></p>\n <p><label>Weight in KG: </label><in…", nodeType: 1, tagName: "form"}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const height = parseFloat(document.querySelector("#height").value);
+  const weight = parseFloat(document.querySelector("#weight").value);
+
+  const results = document.querySelector("#results");
+
+  if (
+    height === "" ||
+    height < 0 ||
+    isNaN(height) ||
+    weight === "" ||
+    weight < 0 ||
+    isNaN(weight)
+  ) {
+    results.innerHTML = "please enter a valid value";
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    results.innerHTML = `<span>${bmi}</span>`;
+  }
+});
+```
