@@ -39,88 +39,125 @@ document.getElementById('firstHeading').innerHTML = "
 <!-- 
   document.getElementById("title")
 <h1 id=​"title" class=​"heading">​…​</h1>​
+
 document.getElementById("title").id
 'title'
+
 document.getElementById("title").class
 undefined
+
 document.getElementById("title").className
 'heading'
+
 document.getElementById("title").getAttribute('id')
 'title'
+
 document.getElementById("title").getAttribute('class')
 'heading'
+
 document.getElementById("title").setAttribute('class', "hello dear")
 undefined
+
 //.setAttribute will overwrite on the existing class
 undefined
+
 const title = document.getElementById("title")
 undefined
+
 title
 <h1 id=​"title" class=​"hello dear">​…​</h1>​
+
 title.style.backgroundColor = '#D9EDBF'
 '#D9EDBF'
+
 title.style.padding = '20px'
 '20px'
+
 title.style.borderRadius = '20px'
 '20px'
+
 title.textContent
 '\n        DOM learning on Chai aur code\n        test text\n      '
+
 title.innerHTML
 '\n        DOM learning on Chai aur code\n        <span>test text</span>\n      '
+
 title.innerText
 'DOM learning on Chai aur code test text'
 
 title.innerHTML
 '\n        DOM learning on Chai aur code\n        <span style="display: none">test text</span>\n      '
+
 title.innerText
 'DOM learning on Chai aur code'
+
 title.textContent
 '\n        DOM learning on Chai aur code\n        test text\n      '
+
 //difference between textContent and innerText is that innerText only shows us the content that is visible i.e. it will ignore things which have display none or hidden
-undefined
+
+
 // innerHTML tells us even about the HTML present inside the tag
-undefined
+
 
 document.querySelector('h2')
 <h2>​Lorem ipsum dolor sit.​</h2>​
+
 //it returns the first element matching the given tag
-undefined
+
 document.querySelectorAll('h2')
 NodeList(3) [h2, h2, h2]0: h21: h22: h2length: 3[[Prototype]]: NodeList
 //it returns the all element matching the given tag
-undefined
+
+
 document.querySelector('#title')
 <h1 id=​"title" class=​"heading">​…​</h1>​
+
 document.querySelector('.heading')
 <h1 id=​"title" class=​"heading">​…​</h1>​
+
 document.querySelector('input[type=password]')
 <input type=​"password" name id>​
+
 document.querySelector('p:first-child')
 null
+
 document.querySelector('ul')
 <ul>​…​</ul>​
+
 const myul = document.querySelector('ul')
 undefined
+
 myul.querySelector('li')
 <li class=​"list-item">​…​</li>​
+
 const turnGreen = myul.querySelector('li')
 undefined
+
 turnGreen.style.backgroundColor = 'green'
 'green'
+
 turnGreen.style.padding = '20px'
 '20px'
+
 turnGreen.innerText = "ek"
 'ek'
+
 document.querySelectorAll('h2')
 NodeList(3) [h2, h2, h2]
+
 const tempLiList = document.querySelectorAll('h2')
 undefined
+
 tempLiList
 NodeList(3) [h2, h2, h2]
+
 //it returns a nodelist not an array here we can use forEach method but not the map() 
-undefined
+
+
 tempLiList[1].style.color = "orange"
 'orange'
+
 tempLiList.forEach((h)=>{
     h.style.backgroundColor = "yellow"
 })
@@ -128,16 +165,19 @@ undefined
 
 document.getElementsByClassName("list-item")
 HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Object
+
 // it returns a HTML collection
-undefined
+
+
 const tempClassList = document.getElementsByClassName("list-item")
-undefined
+
 // converting html collection to array
-undefined
+
 const newArray = Array.from(tempClassList)
-undefined
+
 newArray
 (4) [li.list-item, li.list-item, li.list-item, li.list-item]
+
 //now we can use all our array functions here
-undefined
+
  -->
