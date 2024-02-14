@@ -2,7 +2,7 @@
 
 ## project link:
 
-[click here](https://stackblitz.com/edit/dom-project-chaiaurcode-9hxqch?file=1-colorChanger%2Fchaiaurcode.js,index.html)
+[click here](https://stackblitz.com/edit/dom-project-chaiaurcode-9hxqch?file=3-DigitalClock%2Fchaiaurcode.js,index.html)
 
 # solution code
 
@@ -76,4 +76,19 @@ form.addEventListener("submit", (e) => {
     results.innerHTML = `<span>${bmi}</span>`;
   }
 });
+```
+
+## project 3
+
+```javascript
+const clock = document.getElementById("clock");
+
+let date = new Date();
+let time = date.toLocaleTimeString();
+
+setInterval(() => {
+  let date = new Date();
+  time = date.toLocaleTimeString();
+  clock.innerHTML = `${time}`;
+}, 1000);
 ```
