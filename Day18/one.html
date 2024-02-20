@@ -120,3 +120,94 @@
     
 </script>
 </html>
+
+<!-- //********************************************************************************************************************************************************************************************ASYNC********************************************************************************************************************************************************************************************
+
+
+***js is synchronus and single threaded ***
+
+JavaScript (JS) is synchronous and single-threaded primarily because of its design and the environment it runs in, typically the browser or server-side environments like Node.js.
+
+Single-threaded: JS operates on a single thread, meaning it can only execute one piece of code at a time. This thread handles all tasks, including executing code, handling events, and updating the user interface.
+
+Synchronous: JS executes code line by line in the order it appears, without parallel execution. When a function is called, the program waits for it to finish before moving on to the next task. This synchronous nature ensures predictable behavior and simplifies programming logic, especially for web development where interactions need to be handled in a structured manner.
+
+These characteristics contribute to JavaScript's simplicity and ease of use for handling asynchronous tasks through mechanisms like callbacks, promises, and async/await, without sacrificing its single-threaded nature.
+
+//***************************************************************************************************************************
+execution context:-
+
+In JavaScript, an execution context is an abstract concept that holds information about the environment in which a piece of code is executed. Understanding execution context is crucial for understanding variable scope, hoisting, closures, and the behavior of this keyword. Each time code is executed, a new execution context is created. Let's delve into more detail:
+
+>Global Execution Context: This is the default or outermost execution context. It represents the environment in which JavaScript code is executed initially, outside of any function. In a browser, the global execution context is associated with the global object (window in browsers, global in Node.js).
+
+>Function Execution Context: Every time a function is invoked, a new execution context specific to that function is created. This context includes information such as the function's arguments, local variables, and references to its outer lexical environment (i.e., where the function was declared).
+
+>Execution Context Stack (Call Stack): JavaScript uses a stack data structure called the "execution context stack" or "call stack" to manage execution contexts. When a function is invoked, a new execution context is pushed onto the stack. When a function completes execution, its context is popped off the stack, and control returns to the context below it.
+
+>Execution Phases:
+~Creation Phase: During this phase, the JavaScript engine sets up the execution context. This includes creating the Variable Object (VO) for the context, setting up the scope chain, determining the value of this, and hoisting function declarations and variables.
+~Execution Phase: In this phase, code is executed line by line. Function calls, variable assignments, and other operations take place.
+~Variable Object (VO): In the context of a function execution context, the Variable Object is a special object that contains all the function's variables, function declarations, and formal parameters. It forms the foundation of the scope chain.
+
+>Scope Chain: Each execution context has a scope chain, which is used to resolve identifiers (variables and functions). The scope chain is formed by combining the Variable Object of the current context with the Variable Objects of its outer lexical environments (determined by where the function was declared).
+
+>Lexical Environment: An execution context is associated with a lexical environment, which essentially consists of the Variable Object and the reference to the outer lexical environment. Lexical scoping determines how variables are resolved based on their location in the source code.
+
+Understanding execution context is fundamental to understanding JavaScript's behavior, especially with regard to scoping, hoisting, closures, and the this keyword.
+
+//*******************************************************************************************************************************
+
+BLOCKING CODE VS NON-BLOCKING CODE
+
+
+Blocking Code:
+In blocking code, when a task is initiated, the program waits until the task is completed before moving on to the next line of code.
+This can cause delays and make the program less responsive, especially in environments where tasks may take a significant amount of time.
+Traditional synchronous code execution is inherently blocking.
+Eg:- read file sync
+
+Non-blocking Code:
+In non-blocking code, tasks are initiated without waiting for them to complete. Instead, the program continues to execute while the task is being processed.
+Non-blocking code allows for better responsiveness and efficiency, as the program can perform other tasks while waiting for slower operations to finish.
+Asynchronous programming in JavaScript, using features like callbacks, promises, or async/await, enables non-blocking code execution, making it well-suited for handling tasks such as I/O operations, network requests, and user interactions without freezing the entire program.
+Eg:- read file async
+
+
+//************************************************************************************************************************
+
+To understand how JavaScript engine (memory heap and call stack), web API, task queue, and promises work together in an event loop, let's break down each component and how they interact:
+
+JavaScript Engine:
+
+Memory Heap: This is where memory allocation happens, such as storing variables and function calls.
+Call Stack: This is a data structure that stores function calls, representing the execution context of the JavaScript code. It follows the Last In, First Out (LIFO) principle.
+Web API:
+
+Web APIs are provided by the browser environment and include functions like setTimeout, XMLHttpRequest (XHR), DOM manipulation methods, and more. They are not part of the JavaScript language itself but are accessible through JavaScript code in the browser.
+Task Queue:
+
+The task queue (also known as the callback queue) holds tasks that are ready to be executed. These tasks typically come from asynchronous operations such as setTimeout callbacks, DOM events, AJAX requests, etc.
+Promises:
+
+Promises are a way to handle asynchronous operations in JavaScript, providing a cleaner syntax and better error handling compared to traditional callback-based approaches.
+Now, let's see how they work together in the event loop:
+
+When JavaScript code is executed, synchronous tasks are pushed onto the call stack and executed in order.
+
+If there are asynchronous tasks (e.g., setTimeout, AJAX requests), they are offloaded to the Web API environment, and their callbacks are scheduled to be executed once they are complete.
+
+Asynchronous tasks, once completed, are pushed into the task queue.
+
+The event loop continuously checks the call stack and task queue. When the call stack is empty (meaning all synchronous tasks have been completed), the event loop picks the first task from the task queue and pushes it onto the call stack for execution.
+
+If the task is a Promise, its callback is scheduled to be executed as soon as the Promise resolves or rejects. Once resolved or rejected, the corresponding callback is placed in the task queue.
+
+This process repeats, with the event loop continually checking the call stack and task queue, ensuring that asynchronous tasks are executed when they are completed, while also handling synchronous tasks in order.
+
+In summary, the event loop coordinates the execution of JavaScript code, ensuring that asynchronous tasks are properly handled alongside synchronous tasks, by managing the interaction between the call stack, task queue, Web API, and Promises.
+
+
+//*************************************************************************************************************************
+ -->
+
