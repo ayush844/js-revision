@@ -140,17 +140,6 @@ getAllUsers()
 
 // -------------------------------------------------------------------------------------------------------------------------
 
-fetch('https://api.github.com/users/ayush844')
-.then((response) => {
-    return response.json()
-})
-.then((data) => {
-    console.log(data);
-})
-.catch((error) => console.log(error))
-
-// -------------------------------------------------------------------------------------------------------------------------
-
 // Promise.all()
 
 //The Promise.all() static method takes an iterable of promises as input and returns a single Promise. This returned promise fulfills when all of the input's promises fulfill (including when an empty iterable is passed), with an array of the fulfillment values. It rejects when any of the input's promises rejects, with this first rejection reason.
@@ -165,3 +154,27 @@ Promise.all([promise1, promise2, promise3]).then((values) => {
   console.log(values);
 });
 // Expected output: Array [3, 42, "foo"]
+
+// -------------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------
+
+
+fetch('https://api.github.com/users/ayush844')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => console.log(error))
+
+
+// this fetch function will execute before the all the the code above because fetch functions are placed in special queue (priority queue / microtask queue) which is given priority so it gets in the call stack before anyone else.
+
+
+// study it from hitesh choudhary fetch video in js playlist(chai aur code)
+
+
+//A fetch() promise only rejects when a network error is encountered (which is usually when there's a permissions issue or similar). A fetch() promise does not reject on HTTP errors (404, etc.). Instead, a then() handler must check the Response.ok and/or Response.status properties.
+
