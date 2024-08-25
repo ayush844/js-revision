@@ -18,6 +18,10 @@ const anotherId = Symbol('123')
 console.log(id === anotherId);
 //false as both will be considered unique
 
+// Primitive Types: Simple, immutable, and stored by value.
+// Non-Primitive Types: Complex, mutable, and stored by reference.
+
+
 // const bigNumber = 3456543576654356754n
 
 
