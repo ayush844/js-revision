@@ -74,6 +74,11 @@ console.log(typeof anotherId);
 
 /****************************************************************************************************************** */
 
+// Dynamically Typed: The type of a variable is determined at runtime, and can change as the program executes.
+
+// Loosely Typed: The language allows implicit type conversion, where variables can be automatically converted from one type to another depending on the operation being performed.
+
+// JavaScript is an example of both a dynamically typed and loosely typed language, which gives it flexibility but also requires careful attention to avoid unintended type coercion and errors.
 
 //------------------------------------------------ MEMORY STORAGE ------------------------------------------------
 
