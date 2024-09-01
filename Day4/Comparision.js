@@ -30,7 +30,7 @@ console.log(null >= 0);
 
 //-------------------------------------------------------------------------------------------------
 
-//here if we use undefined instead of null it will give result in all cases 
+//here if we use undefined instead of null it will give result false in all cases 
 
 console.log(undefined == 0);
 console.log(undefined > 0);
