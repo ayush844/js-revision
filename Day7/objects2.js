@@ -132,3 +132,68 @@ console.log(instructor);
 //     {},
 //     {}
 // ]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------SINGLETON AND NON-SINGLETON-------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Singleton:
+
+// A singleton in JavaScript is a design pattern that ensures a class or object has only one instance throughout the entire application. 
+// Even if you try to create a new instance, it will always return the same one.
+
+// Why use a Singleton?
+
+// You might want to use a singleton when you need to share the same instance of an object or class across your entire app, like for a database connection or a configuration object.
+
+// Example:
+
+class Singleton {
+  constructor() {
+    if (!Singleton.instance) {
+      Singleton.instance = this;
+    }
+    return Singleton.instance;
+  }
+}
+
+const instance1 = new Singleton();
+const instance2 = new Singleton();
+
+console.log(instance1 === instance2); // true
+
+// In this example, instance1 and instance2 are the same because the class ensures that only one instance exists.
+
+    
+// Non-Singleton:
+
+// A non-singleton is just a regular class or object. Every time you create a new instance of it, you get a completely separate and independent object.
+
+// Why use a Non-Singleton?
+
+// Non-singletons are useful when you need multiple, independent instances of a class or object. For example, if you’re creating different users in a game, each user should be a unique object.
+
+// Example:
+
+class NonSingleton {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const user1 = new NonSingleton('Alice');
+const user2 = new NonSingleton('Bob');
+
+console.log(user1 === user2); // false
+console.log(user1.name); // 'Alice'
+console.log(user2.name); // 'Bob'
+
+// In this case, user1 and user2 are different objects with their own independent properties.
+
+    
+// Summary:
+// Singleton: Only one instance exists no matter how many times you try to create it.
+// Non-Singleton: Every time you create an instance, you get a new, independent object.
