@@ -53,7 +53,9 @@ one()
 // one(function) can not access any variable declared inside two(function) but inner function can access variable declared inside outer function this is called closure
 
 //*********************************************************************************************************************** */
-// A closure in JavaScript is a combination of a function and the lexical environment within which that function is declared. It allows the function to access variables from its outer (enclosing) scope even after the outer function has completed execution. Closures provide a way for functions to retain access to the variables of the surrounding context, creating a persistent link between the function and its original scope.
+// A closure in JavaScript is a combination of a function and the lexical environment within which that function is declared. 
+// It allows the function to access variables from its outer (enclosing) scope even after the outer function has completed execution. 
+// Closures provide a way for functions to retain access to the variables of the surrounding context, creating a persistent link between the function and its original scope.
 //*********************************************************************************************************************** */
 
 
@@ -97,4 +99,5 @@ addTwo(5)   // 7 this will run fine (no error)
 
 
 //  HOISTING:
-// Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their containing scope during the compilation phase. This means that you can use a variable or call a function even before it's declared in the code.
+// Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their containing scope during the compilation phase. 
+// This means that you can use a variable or call a function even before it's declared in the code.
